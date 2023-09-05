@@ -1,0 +1,4 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+data|stem|9cbea00a06381e4a|43fae4011a0626f4|136bf5e07fbd9b1c|1588979285||t19605.559779527s|d07e2e962de596ec|1750|rds|local|vector|||0.138||
+plot|stem|7a69a1341b5cb2c2|f04677984310618d|25807febd75617b4|1931196220||t19605.559780314s|25dc543987030d02|41511|rds|local|vector|||0.008||
+save_plot|stem|4240f66a054448c6|aa8994db038440e5|c05870667880ecf3|-938188392|plot/plot.png|t19605.5597959622s|bb40b500408771f1|69601|file|local|vector|||1.347||
