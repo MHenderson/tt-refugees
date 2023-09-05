@@ -1,4 +1,5 @@
-# tt-template
-A template repository for Tidy Tuesday.
+# tt-refugees
+
+Tidy Tuesday for week 34, 2023
 
 ![A scatterplot of random points.](plot/plot.png)
