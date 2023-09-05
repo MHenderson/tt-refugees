@@ -9,7 +9,7 @@ library(targets)
 
 # Set target options:
 tar_option_set(
-  packages = c("ggplot2", "tibble"), # packages that your targets need to run
+  packages = c("ggplot2", "readr", "tibble"), # packages that your targets need to run
   format = "rds" # default storage format
   # Set other options as needed.
 )
@@ -26,12 +26,12 @@ tar_source()
 
 list(
   tar_target(
-    name = data,
-    command = tibble(x = rnorm(100), y = rnorm(100))
+    name = population,
+    command = read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv')
   ),
   tar_target(
     name = plot,
-    command = ggplot(data = data) + geom_point(aes(x, y))
+    command = ggplot(data = population) + geom_point(aes(x = year, y = asylum_seekers))
   ),
   tar_target(
     name = save_plot,
