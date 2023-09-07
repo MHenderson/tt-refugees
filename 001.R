@@ -21,3 +21,5 @@ XX <- X_tidy |>
 
 ggplot(XX) +
   geom_line(aes(year, value, colour = name))
+
+ggsave(filename = "plot/plot_001.png", bg = "white", width = 10, height = 8)
