@@ -2,4 +2,14 @@
 
 Tidy Tuesday for week 34, 2023
 
-![A scatterplot of random points.](plot/plot.png)
+## Test plot
+
+![](plot/test-plot.png)
+
+## Afghanistan-Australia plot
+
+![](plot/afg-aus-plot.png)
+
+## Afghanistan asylum plot
+
+![](plot/afg-asylum-plot.png)
