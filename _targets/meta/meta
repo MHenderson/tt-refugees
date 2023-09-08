@@ -1,5 +1,13 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+afg_asylum_plot|stem|a343dee0763e20fc|ae71a17eebc678cc|7e26e2abdd4a080f|-1307373509||t19608.5536035745s|61da192eb8b505ac|1058239|rds|local|vector|||0.124||
+afg_aus_plot|stem|8b84f0f668427972|6b6a5a3e52bc5723|b50ef858d6838691|-617275958||t19608.5493286671s|cb6130239bfb7990|1036793|rds|local|vector|||0.019||
 data|stem|9cbea00a06381e4a|43fae4011a0626f4|136bf5e07fbd9b1c|1588979285||t19605.559779527s|d07e2e962de596ec|1750|rds|local|vector|||0.138||
 plot|stem|0b0921e465b8d4b0|99e046cc0086498b|50368e016d40676a|1931196220||t19607.3834167309s|0b6aa17651939da2|967117|rds|local|vector|||0.008||
-population|stem|9714ebc020ee5132|6352dcd122fbd287|7199b9143a2e7ccc|-673575744||t19607.3834109439s|94d700d0d818d332|461564|rds|local|vector|||1.935||
-save_plot|stem|ee1abaa561524ccd|aa8994db038440e5|cec48dd795ff62a9|-938188392|plot/plot.png|t19607.3802177494s|71c145f1bf281ebf|93806|file|local|vector|||1.699||
+population|stem|9714ebc020ee5132|6352dcd122fbd287|7199b9143a2e7ccc|-673575744||t19608.5456161209s|94d700d0d818d332|461564|rds|local|vector|||1.474||
+population_pp|stem|3ffda5117e2f70b9|5d2307ab9c8e0a60|d82a6566944a6c76|1792482535||t19608.5456198246s|5f921f04d20a9e4e|461423|rds|local|vector|||0.106||
+save_afg_asylum_plot|stem|c2f1c35fb5adce6b|99231056f1ec4792|db7cbc0eb17cad0f|-1418455381|plot/afg-asylum-plot.png|t19608.5536287597s|28361778dbc90e98|322903|file|local|vector|||0.711|ggrepel 97 unlabeled data points too many overlaps. Consider increasing max.overlaps|
+save_afg_aus_plot|stem|29f186ed8a545dc5|2754ff85260c1a26|b714010eb132630b|655451119|plot/afg-aus-plot.png|t19608.5536204726s|34ad7ab4a324fad7|170043|file|local|vector|||0.585|1m22mRemoved 25 rows containing missing values geom_line.|
+save_plot|stem|ee1abaa561524ccd|af01b8b229535e1d|34a1a92c1daded8c|-938188392|plot/test_plot.png|t19608.5456688524s|71c145f1bf281ebf|93806|file|local|vector|||2.476||
+save_test_plot|stem|ee1abaa561524ccd|69f413e6d01fddba|34a1a92c1daded8c|-2026347373|plot/test-plot.png|t19608.552508343s|71c145f1bf281ebf|93806|file|local|vector|||1.581||
+test_plot|stem|0b0921e465b8d4b0|99e046cc0086498b|50368e016d40676a|1923075091||t19608.5456250561s|0b6aa17651939da2|967117|rds|local|vector|||0.008||
+tidy_population|stem|0476b65a304b1270|ec0755496fa997f4|e4ba89fd66a42704|595524063||t19608.5456401024s|256ccd00c0f068ff|993445|rds|local|vector|||0.166||
