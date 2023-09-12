@@ -1,18 +1,28 @@
-#network_plot <- function(X) {
- X <- targets::tar_read(tidy_population) 
- 
- country_subset <- c("Afghanistan", "Iraq", "Palestine", "Rwanda", "United States of America", "Australia", "United Kingdom")
- 
- X_subset <- X |>
-   filter(coo_name %in% country_subset, coa_name %in% country_subset) |>
-   filter(name == "refugees") |>
-   filter(year == "2021-01-01")
+edge_data <- function(X, countries) {
 
- nodes <- data.frame(name = unique(c(X_subset$coo_name, X_subset$coa_name)))
- edges <- expand.grid(from = nodes$name, to = nodes$name)
+  X |>
+    filter(coo_name %in% countries, coa_name %in% countries) |>
+    filter(name == "refugees") |>
+    filter(year == "2021-01-01") |>
+    select(from = coo_name, to = coa_name, refugees = value) |>
+    filter(from != to) |>
+    filter(refugees != 0)
+
+}
+
+simple_network_plot <- function(X) {
+
+ country_subset <- sample(unique(c(X$coo_name, X$coa_name)), 30)
+
+ edges <- edge_data(X, country_subset)
+ 
+ nodes <- data.frame(name = unique(c(edges$from, edges$to)))
  
  X_graph <- tbl_graph(nodes, edges)
  
+ ggraph(X_graph, layout = 'linear', circular = TRUE) + 
+   geom_edge_arc(aes(width = refugees)) +
+   coord_fixed()
  
+}
  
- #}

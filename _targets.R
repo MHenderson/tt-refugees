@@ -9,7 +9,7 @@ library(targets)
 
 # Set target options:
 tar_option_set(
-  packages = c("dplyr", "ggplot2", "ggrepel", "readr", "tibble", "tidyr"), # packages that your targets need to run
+  packages = c("dplyr", "ggplot2", "ggraph", "ggrepel", "readr", "tibble", "tidygraph", "tidyr"), # packages that your targets need to run
   format = "rds" # default storage format
   # Set other options as needed.
 )
@@ -62,6 +62,15 @@ list(
   tar_target(
     name = save_afg_asylum_plot,
     command = ggsave(plot = afg_asylum, filename = "plot/afg-asylum-plot.png", bg = "white", width = 10, height = 8),
+    format = "file"
+  ),
+  tar_target(
+    name = simple_network,
+    command = simple_network_plot(tidy_population)
+  ),
+  tar_target(
+    name = save_simple_network_plot,
+    command = ggsave(plot = simple_network, filename = "plot/simple-network-plot.png", bg = "white", width = 10, height = 8),
     format = "file"
   )
 )

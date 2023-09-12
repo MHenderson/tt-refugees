@@ -13,3 +13,7 @@ Tidy Tuesday for week 34, 2023
 ## Afghanistan asylum plot
 
 ![](plot/afg-asylum-plot.png)
+
+## Simple network plot
+
+![](plot/simple-network-plot.png)
