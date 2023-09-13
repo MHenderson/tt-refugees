@@ -17,3 +17,7 @@ Tidy Tuesday for week 34, 2023
 ## Simple network plot
 
 ![](plot/simple-network-plot.png)
+
+## Labelled network plot
+
+![](plot/labelled-network-plot.png)

@@ -4,11 +4,15 @@ afg_asylum_plot|function|81a83219bfa9cca3|||||||||||||||
 afg_aus|stem|2f3880673bbd7292|fd2e064ab2c10319|fcba698a704d82aa|320978473||t19613.424015581s|3fc0268a9d0fc2f4|1036801|rds|local|vector|||0.013||
 afg_aus_plot|function|788d6d7471bc9f01|||||||||||||||
 edge_data|function|e412f36c304049ac|||||||||||||||
+labelled_network|stem|3aad1a0905182c91|50499719e82bd194|bb7ed9eeae23a427|-1344850211||t19613.4613562853s|adf1593adb033b94|148225|rds|local|vector|||0.253||
+labelled_network_plot|function|a94c6466ae2b9e57|||||||||||||||
+network_data|function|5329ccc89e6e1869|||||||||||||||
 population|stem|9714ebc020ee5132|6352dcd122fbd287|7199b9143a2e7ccc|-673575744||t19613.4239786829s|94d700d0d818d332|461564|rds|local|vector|||1.572||
 population_pp|stem|3ffda5117e2f70b9|bd3b1f372f307053|2b3f6b53a1aebe70|1792482535||t19613.4239842384s|5f921f04d20a9e4e|461423|rds|local|vector|||0.259||
 preprocess|function|fdcb974a4fd77f42|||||||||||||||
 save_afg_asylum_plot|stem|c2f1c35fb5adce6b|05c8a89a5513e88f|2069eec317499c95|-1418455381|plot/afg-asylum-plot.png|t19613.4193496088s|28361778dbc90e98|322903|file|local|vector|||0.628|ggrepel 97 unlabeled data points too many overlaps. Consider increasing max.overlaps|
 save_afg_aus_plot|stem|29f186ed8a545dc5|d06fbf0b0daff33f|098610b4bb1f10d7|655451119|plot/afg-aus-plot.png|t19613.4193496088s|34ad7ab4a324fad7|170043|file|local|vector|||0.518|1m22mRemoved 25 rows containing missing values geom_line.|
+save_labelled_network_plot|stem|f5aeb664e9e1e78e|5104ffbb5e1c7684|4ff8bb6a124dd788|-1576697680|plot/labelled-network-plot.png|t19613.461369989s|4dc548e6835fb8ea|511988|file|local|vector|||1.158|1m22mUsing the size aesthetic in this geom was deprecated in ggplot2 3.4.0.36mℹ39m Please use linewidth in the default_aes field and elsewhere instead.|
 save_simple_network_plot|stem|24e5df24e5d9bc39|947425e8d206b4bb|bf38351df87fa6c4|-67286401|plot/simple-network-plot.png|t19613.4240592384s|13d285e4831d8c1a|419060|file|local|vector|||1.344|1m22mUsing the size aesthetic in this geom was deprecated in ggplot2 3.4.0.36mℹ39m Please use linewidth in the default_aes field and elsewhere instead.|
 save_test_plot|stem|780ea525bf553ca1|adec1a61a9159a4b|79ef6dca8df8aaf3|-2026347373|plot/test-plot.png|t19613.4193496551s|100f90a434cf93e2|75455|file|local|vector|||2.428||
 simple_network|stem|6b72a32bd47d6cc8|8de973d712a09852|107dc6df9a27a88c|-1881732597||t19613.4240309051s|eb4a0ede2a762432|1072027|rds|local|vector|||0.229||
