@@ -72,5 +72,14 @@ list(
     name = save_simple_network_plot,
     command = ggsave(plot = simple_network, filename = "plot/simple-network-plot.png", bg = "white", width = 10, height = 8),
     format = "file"
+  ),
+  tar_target(
+    name = labelled_network,
+    command = tidy_population |> network_data() |> labelled_network_plot()
+  ),
+  tar_target(
+    name = save_labelled_network_plot,
+    command = ggsave(plot = labelled_network, filename = "plot/labelled-network-plot.png", bg = "white", width = 10, height = 8),
+    format = "file"
   )
 )
