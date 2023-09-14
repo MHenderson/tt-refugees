@@ -15,14 +15,16 @@ network_data|function|5329ccc89e6e1869|||||||||||||||
 population|stem|9714ebc020ee5132|6352dcd122fbd287|7199b9143a2e7ccc|-673575744||t19614.5663605215s|94d700d0d818d332|461564|rds|local|vector|||1.639||
 population_pp|stem|3ffda5117e2f70b9|bd3b1f372f307053|2b3f6b53a1aebe70|1792482535||t19614.5663661234s|5f921f04d20a9e4e|461423|rds|local|vector|||0.263||
 preprocess|function|fdcb974a4fd77f42|||||||||||||||
-save_afg_asylum_plot|stem|c2f1c35fb5adce6b|05c8a89a5513e88f|2acd29a20056fad1|-1418455381|plot/afg-asylum-plot.png|t19614.5708389937s|28361778dbc90e98|322903|file|local|vector|||0.628|ggrepel 97 unlabeled data points too many overlaps. Consider increasing max.overlaps|
-save_afg_aus_plot|stem|29f186ed8a545dc5|d06fbf0b0daff33f|e31889874197b917|655451119|plot/afg-aus-plot.png|t19614.5664430678s|34ad7ab4a324fad7|170043|file|local|vector|||0.497|1m22mRemoved 25 rows containing missing values geom_line.|
-save_labelled_network_plot|stem|f5aeb664e9e1e78e|5104ffbb5e1c7684|9c97fb7b44bbf194|-1576697680|plot/labelled-network-plot.png|t19614.5664323271s|4dc548e6835fb8ea|511988|file|local|vector|||1.401|1m22mUsing the size aesthetic in this geom was deprecated in ggplot2 3.4.0.36mℹ39m Please use linewidth in the default_aes field and elsewhere instead.|
-save_simple_network_plot|stem|24e5df24e5d9bc39|947425e8d206b4bb|02630d6b581d3448|-67286401|plot/simple-network-plot.png|t19614.5664371882s|13d285e4831d8c1a|419060|file|local|vector|||0.413||
-save_test_plot|stem|780ea525bf553ca1|adec1a61a9159a4b|79ef6dca8df8aaf3|-2026347373|plot/test-plot.png|t19614.5583774198s|100f90a434cf93e2|75455|file|local|vector|||2.428||
+save_afg_asylum_plot|stem|338d6884ea9ddabf|05c8a89a5513e88f|2acd29a20056fad1|-1418455381|plot/afg-asylum-plot.png|t19614.597838299s|5f186532a20eed88|312012|file|local|vector|||0.678|ggrepel 94 unlabeled data points too many overlaps. Consider increasing max.overlaps|
+save_afg_aus_plot|stem|430caa30a2946944|d06fbf0b0daff33f|e31889874197b917|655451119|plot/afg-aus-plot.png|t19614.5978301508s|626b219a50070f7b|162155|file|local|vector|||0.517|1m22mRemoved 25 rows containing missing values geom_line.|
+save_labelled_network_plot|stem|e427e614fb4d80c6|5104ffbb5e1c7684|9c97fb7b44bbf194|-1576697680|plot/labelled-network-plot.png|t19614.5978099656s|3b257d62d01510ef|463196|file|local|vector|||0.528|1m22mUsing the size aesthetic in this geom was deprecated in ggplot2 3.4.0.36mℹ39m Please use linewidth in the default_aes field and elsewhere instead.|
+save_simple_network_plot|stem|587f883fab42d5ed|947425e8d206b4bb|02630d6b581d3448|-67286401|plot/simple-network-plot.png|t19614.5978239934s|c9d7ef3028890586|413032|file|local|vector|||0.405||
+save_test_plot|stem|290d6a4dfa60148d|adec1a61a9159a4b|29dc0e7eada51727|-2026347373|plot/test-plot.png|t19614.5978033453s|e42c60f6281bdcbe|75772|file|local|vector|||1.607||
 simple_network|stem|cba11e7455046809|8de973d712a09852|107dc6df9a27a88c|-1881732597||t19614.5664026975s|eb4a0ede2a762432|1072027|rds|local|vector|||0.21||
 simple_network_plot|function|b15de6dca7a6ce53|||||||||||||||
-test|stem|7fdd270054c5ca39|672f1f5e03ee0f16|5d88da5461344ea9|1064684737||t19614.5663711234s|7cd517a2e6977058|967003|rds|local|vector|||0.008||
-test_plot|function|72cf05e79f9914be|||||||||||||||
+test|stem|c9da6ca1a0720097|672f1f5e03ee0f16|848b25bd52b9395a|1064684737||t19614.5947564009s|aede6ccf1ae1c23e|967135|rds|local|vector|||0.009||
+test_plot|function|22d4899a30bb947d|||||||||||||||
+theme_gppr|function|c66c1aedee8f115f|||||||||||||||
+theme_mjh|function|22aff7cb807ef2ea|||||||||||||||
 tidy|function|3490278db9ac9b5c|||||||||||||||
 tidy_population|stem|0476b65a304b1270|895663da002e0f57|2cf69eb61e03c05f|595524063||t19614.5663851975s|256ccd00c0f068ff|993445|rds|local|vector|||0.186||
