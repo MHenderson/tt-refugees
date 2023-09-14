@@ -47,8 +47,12 @@ list(
     format = "file"
   ),
   tar_target(
+    name = afg_aus_X,
+    command = afg_aus_data(tidy_population)
+  ),
+  tar_target(
     name = afg_aus,
-    command = afg_aus_plot(tidy_population)
+    command = afg_aus_plot(afg_aus_X)
   ),
   tar_target(
     name = save_afg_aus_plot,
@@ -56,8 +60,12 @@ list(
     format = "file"
   ),
   tar_target(
+    name = afg_asylum_X,
+    command = afg_asylum_data(tidy_population)
+  ),
+  tar_target(
     name = afg_asylum,
-    command = afg_asylum_plot(tidy_population)
+    command = afg_asylum_plot(afg_asylum_X)
   ),
   tar_target(
     name = save_afg_asylum_plot,
