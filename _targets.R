@@ -4,6 +4,8 @@
 #   https://books.ropensci.org/targets/walkthrough.html#inspect-the-pipeline # nolint
 
 # Load packages required to define the pipeline:
+library(showtext) # for font_add_google in theme_mjh
+library(ggplot2) # for %+replace% in theme_mjh
 library(targets)
 # library(tarchetypes) # Load other packages as needed. # nolint
 
@@ -23,6 +25,11 @@ options(clustermq.scheduler = "multicore")
 # Run the R scripts in the R/ folder with your custom functions:
 tar_source()
 # source("other_functions.R") # Source other scripts as needed. # nolint
+
+ggplot2::theme_set(theme_mjh())
+
+## Automatically use showtext to render text
+showtext_auto()
 
 list(
   tar_target(
