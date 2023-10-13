@@ -1,12 +1,7 @@
-theme_mjh <- function() {
+theme_mjh <- function(base_family = "gochi", base_size = 11.5) {
 
-  font_add_google("Gochi Hand", "gochi")
-    
-  theme_minimal() %+replace%
-    theme(
-      axis.title = element_text(family = "gochi", size = 38),
-      axis.text = element_text(family = "gochi", size = 28),
-      title = element_text(family = "gochi", size = 44)
-    )
+  ret <- theme_minimal(base_family = base_family, base_size = base_size)
+  
+  ret + theme()
 
 }

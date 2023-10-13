@@ -9,6 +9,8 @@ library(ggplot2) # for %+replace% in theme_mjh
 library(targets)
 # library(tarchetypes) # Load other packages as needed. # nolint
 
+font_add_google("Gochi Hand", "gochi")
+
 # Set target options:
 tar_option_set(
   packages = c("dplyr", "ggplot2", "ggraph", "ggrepel", "readr", "tibble", "tidygraph", "tidyr"), # packages that your targets need to run
@@ -50,7 +52,7 @@ list(
   ),
   tar_target(
     name = save_test_plot,
-    command = ggsave(plot = test, filename = "plot/test-plot.png", bg = "white", width = 10, height = 8),
+    command = ggsave(plot = test, filename = "plot/test-plot.png", bg = "white", width = 5, height = 4),
     format = "file"
   ),
   tar_target(
@@ -63,7 +65,7 @@ list(
   ),
   tar_target(
     name = save_afg_aus_plot,
-    command = ggsave(plot = afg_aus, filename = "plot/afg-aus-plot.png", bg = "white", width = 10, height = 8),
+    command = ggsave(plot = afg_aus, filename = "plot/afg-aus-plot.png", bg = "white", width = 5, height = 4),
     format = "file"
   ),
   tar_target(
@@ -76,7 +78,7 @@ list(
   ),
   tar_target(
     name = save_afg_asylum_plot,
-    command = ggsave(plot = afg_asylum, filename = "plot/afg-asylum-plot.png", bg = "white", width = 10, height = 8),
+    command = ggsave(plot = afg_asylum, filename = "plot/afg-asylum-plot.png", bg = "white", width = 5, height = 4),
     format = "file"
   ),
   tar_target(
@@ -85,7 +87,7 @@ list(
   ),
   tar_target(
     name = save_simple_network_plot,
-    command = ggsave(plot = simple_network, filename = "plot/simple-network-plot.png", bg = "white", width = 10, height = 8),
+    command = ggsave(plot = simple_network, filename = "plot/simple-network-plot.png", bg = "white", width = 5, height = 4),
     format = "file"
   ),
   tar_target(
@@ -94,7 +96,7 @@ list(
   ),
   tar_target(
     name = save_labelled_network_plot,
-    command = ggsave(plot = labelled_network, filename = "plot/labelled-network-plot.png", bg = "white", width = 10, height = 8),
+    command = ggsave(plot = labelled_network, filename = "plot/labelled-network-plot.png", bg = "white", width = 5, height = 4),
     format = "file"
   )
 )
