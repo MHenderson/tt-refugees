@@ -47,28 +47,6 @@ list(
     command = tidy(population_pp)
   ),
   tar_target(
-    name = test,
-    command = test_plot(population_pp)
-  ),
-  tar_target(
-    name = save_test_plot,
-    command = ggsave(plot = test, filename = "plot/test-plot.png", bg = "white", width = 5, height = 4),
-    format = "file"
-  ),
-  tar_target(
-    name = afg_aus_X,
-    command = afg_aus_data(tidy_population)
-  ),
-  tar_target(
-    name = afg_aus,
-    command = afg_aus_plot(afg_aus_X)
-  ),
-  tar_target(
-    name = save_afg_aus_plot,
-    command = ggsave(plot = afg_aus, filename = "plot/afg-aus-plot.png", bg = "white", width = 5, height = 4),
-    format = "file"
-  ),
-  tar_target(
     name = afg_asylum_X,
     command = afg_asylum_data(tidy_population)
   ),
@@ -79,24 +57,6 @@ list(
   tar_target(
     name = save_afg_asylum_plot,
     command = ggsave(plot = afg_asylum, filename = "plot/afg-asylum-plot.png", bg = "white", width = 5, height = 4),
-    format = "file"
-  ),
-  tar_target(
-    name = simple_network,
-    command = simple_network_plot(tidy_population)
-  ),
-  tar_target(
-    name = save_simple_network_plot,
-    command = ggsave(plot = simple_network, filename = "plot/simple-network-plot.png", bg = "white", width = 5, height = 4),
-    format = "file"
-  ),
-  tar_target(
-    name = labelled_network,
-    command = tidy_population |> network_data() |> labelled_network_plot()
-  ),
-  tar_target(
-    name = save_labelled_network_plot,
-    command = ggsave(plot = labelled_network, filename = "plot/labelled-network-plot.png", bg = "white", width = 5, height = 4),
     format = "file"
   )
 )
