@@ -47,16 +47,12 @@ list(
     command = tidy(population_pp)
   ),
   tar_target(
-    name = afg_asylum_X,
-    command = afg_asylum_data(tidy_population)
+    name = busiest_routes,
+    command = busiest_routes_plot(tidy_population)
   ),
   tar_target(
-    name = afg_asylum,
-    command = afg_asylum_plot(afg_asylum_X)
-  ),
-  tar_target(
-    name = save_afg_asylum_plot,
-    command = ggsave(plot = afg_asylum, filename = "plot/afg-asylum-plot.png", bg = "white", width = 5, height = 4),
+    name = save_busiest_routes_plot,
+    command = ggsave(plot = busiest_routes, filename = "plot/busiest-routes-plot.png", bg = "white", width = 5, height = 4),
     format = "file"
   )
 )
