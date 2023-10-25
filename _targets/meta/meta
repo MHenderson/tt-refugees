@@ -1,33 +1,10 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-afg_asylum|stem|cf589564bc658488|cb4a48b47f3f1b70|c6aade2003c5e0b9|1929609231||t19653.416407285s|8c0033a0b9be8989|68205|rds|local|vector|||0.01||
-afg_asylum_data|function|c2ab1b0354e06b1f|||||||||||||||
-afg_asylum_plot|function|a37bb354360449e3|||||||||||||||
-afg_asylum_X|stem|c905ed7fac25376f|a64a39c56306c4e0|93458e7141d70f8b|116150628||t19653.4164068221s|0a89fd6c24c33a88|5679|rds|local|vector|||0.011||
-afg_aus|stem|be5bce3237505881|bbfa37aae6af4511|697041b178f24fe6|320978473||t19615.6326831195s|ae89edecbe94b960|41509|rds|local|vector|||0.003||
-afg_aus_data|function|960ba96975536732|||||||||||||||
-afg_aus_plot|function|3ccfa8030e577776|||||||||||||||
-afg_aus_X|stem|5bb572078ad25fcb|39fd4e10c7e17100|046666864a0490aa|-1179328007||t19615.6326647862s|b44c136b29c9a3ce|606|rds|local|vector|||0.012||
-agf_aus_data|function|960ba96975536732|||||||||||||||
-busiest_routes|stem|a69e66b2cbe24d33|f74111716a85550f|198e272de60cde04|-1993944351||t19653.4321895067s|94cbb55e1414efa4|1673514|rds|local|vector|||0.227||
-busiest_routes_plot|function|ebe339c725bda48f|||||||||||||||
-edge_data|function|e412f36c304049ac|||||||||||||||
-labelled_network|stem|b6d434b087d25d0d|50499719e82bd194|bb7ed9eeae23a427|-1344850211||t19615.6326684899s|d6473bf0c16436da|148223|rds|local|vector|||0.244||
-labelled_network_plot|function|a94c6466ae2b9e57|||||||||||||||
-network_data|function|5329ccc89e6e1869|||||||||||||||
-population|stem|9714ebc020ee5132|6352dcd122fbd287|7199b9143a2e7ccc|-673575744||t19653.416381498s|94d700d0d818d332|461564|rds|local|vector|||1.55||
-population_pp|stem|3ffda5117e2f70b9|bd3b1f372f307053|2b3f6b53a1aebe70|1792482535||t19653.4163908961s|5f921f04d20a9e4e|461423|rds|local|vector|||0.592||
-preprocess|function|fdcb974a4fd77f42|||||||||||||||
-save_afg_asylum_plot|stem|3de76c8722728061|c95a8bb0b9aed484|2acd29a20056fad1|-1418455381|plot/afg-asylum-plot.png|t19653.411161313s|de5b11a40e3d5ba3|126583|file|local|vector|||0.366|ggrepel 98 unlabeled data points too many overlaps. Consider increasing max.overlaps|
-save_afg_aus_plot|stem|72d9e1f066db2492|984724ff4e4fdae5|e31889874197b917|655451119|plot/afg-aus-plot.png|t19615.6420120551s|acf0953e8817a671|66951|file|local|vector|||0.409|1m22mRemoved 25 rows containing missing values geom_line.|
-save_busiest_routes_plot|stem|e4426502b709e3fc|8ce2bfc1af782c1e|48cd1690d96c6960|1453632901|plot/busiest-routes-plot.png|t19653.4321932567s|c3dec1be47193a53|107983|file|local|vector|||0.318||
-save_labelled_network_plot|stem|ca87823764198ea9|a7801ac8704f47e4|6ea0c1b48cb2f3fe|-1576697680|plot/labelled-network-plot.png|t19615.6419952032s|98f189c75bd6fb17|177019|file|local|vector|||0.286|1m22mUsing the size aesthetic in this geom was deprecated in ggplot2 3.4.0.36mℹ39m Please use linewidth in the default_aes field and elsewhere instead.|
-save_simple_network_plot|stem|857fad6a9c79cd0a|5b32c32d88d2d7cf|09a846c051e6fb1d|-67286401|plot/simple-network-plot.png|t19615.6420071014s|8b34c6418e90e671|116075|file|local|vector|||0.229||
-save_test_plot|stem|cd1b46bbf59a2000|981b2638f9643a8f|29dc0e7eada51727|-2026347373|plot/test-plot.png|t19615.6419914069s|4489f4a4c395abbb|28514|file|local|vector|||1.469||
-simple_network|stem|84818bfe37486796|8de973d712a09852|107dc6df9a27a88c|-1881732597||t19615.632682564s|eb4a0ede2a762432|1072027|rds|local|vector|||0.099||
-simple_network_plot|function|b15de6dca7a6ce53|||||||||||||||
-test|stem|c9da6ca1a0720097|672f1f5e03ee0f16|848b25bd52b9395a|1064684737||t19615.6326505269s|aede6ccf1ae1c23e|967135|rds|local|vector|||0.014||
-test_plot|function|22d4899a30bb947d|||||||||||||||
-theme_gppr|function|c66c1aedee8f115f|||||||||||||||
+busiest_routes|stem|9fc611bff3109092|f74111716a85550f|fa1c3aa526a9ea56|-1993944351||t19655.596876955s|2d99b8baafa7ac19|1707064|rds|local|vector|||0.26||
+busiest_routes_plot|function|b2fd794266c14ee1|||||||||||||||
+population|stem|9714ebc020ee5132|6352dcd122fbd287|7199b9143a2e7ccc|-673575744||t19655.5860120009s|94d700d0d818d332|461564|rds|local|vector|||1.962||
+population_pp|stem|9eece0c9213901be|bd3b1f372f307053|10b4d5685af8ad29|1792482535||t19655.596507881s|58097f2ccb2ab103|458930|rds|local|vector|||0.728||
+preprocess|function|66b89f1b7b1c8b3b|||||||||||||||
+save_busiest_routes_plot|stem|ebbcb953c50e4222|8ce2bfc1af782c1e|4579cb8431747862|1453632901|plot/busiest-routes-plot.png|t19655.5968797328s|915350d7566e5640|87743|file|local|vector|||0.234||
 theme_mjh|function|0c75b1ce7aa60093|||||||||||||||
 tidy|function|3490278db9ac9b5c|||||||||||||||
-tidy_population|stem|0476b65a304b1270|895663da002e0f57|2cf69eb61e03c05f|595524063||t19653.4164065443s|256ccd00c0f068ff|993445|rds|local|vector|||0.174||
+tidy_population|stem|eef31fa91aee6784|895663da002e0f57|36cb97baf6239812|595524063||t19655.5965238532s|77eb27b9d931f417|969329|rds|local|vector|||0.193||
