@@ -34,7 +34,7 @@ busiest_routes_plot <- function(X) {
     ) +
     scale_x_date(
       expand = c(0, 0),
-      limits = c(as.Date("2010-01-01"), as.Date("2030-01-01"))
+      limits = c(as.Date("2010-01-01"), as.Date("2025-01-01"))
     )
 
 }
