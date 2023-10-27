@@ -7,14 +7,16 @@ busiest_routes_plot <- function(X) {
   
   routes <- X_asylum |>
     group_by(route) |>
-    summarise(value = sum(value)) |>
+    summarise(value = last(value)) |>
     arrange(desc(value))
   
+  n_labels <- 5
+  
   busiest_routes <- routes |>
-    head(10)
+    head(n_labels)
   
   other_routes <- routes |>
-    slice(11:50)
+    slice((n_labels + 1):50)
   
   X_busiest_routes <- X_asylum |>
     filter(route %in% busiest_routes$route)
@@ -24,17 +26,18 @@ busiest_routes_plot <- function(X) {
   
   ggplot() +
     geom_line(data = X_busiest_routes, mapping = aes(x = year, y = value, colour = route)) +
-    geom_line(data = X_other_routes, mapping = aes(x = year, y = value, group = route), alpha = 0.2) +
+    geom_line(data = X_other_routes, mapping = aes(x = year, y = value, group = route), linewidth = 0.1, alpha = 0.5) +
     theme(legend.position = "none") +
     geom_text_repel(
       mapping = aes(x = year, y = value, label = route, colour = route),
       data = function(x) X_busiest_routes |> filter(year == "2022-01-01"),
       fontface ="plain",
       size = 5,
-      direction = "y",
+      direction = "x",
       hjust = 0,
       segment.size = 0,
-      box.padding = .1
+      box.padding = 0,
+      xlim = c(as.Date("2022-03-01"), as.Date("2025-01-01"))
     ) +
     scale_x_date(
       expand = c(0, 0),
