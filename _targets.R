@@ -28,7 +28,7 @@ options(clustermq.scheduler = "multicore")
 tar_source()
 # source("other_functions.R") # Source other scripts as needed. # nolint
 
-ggplot2::theme_set(theme_mjh())
+ggplot2::theme_set(theme_mjh(base_size = 15))
 
 ## Automatically use showtext to render text
 showtext_auto()
