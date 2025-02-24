@@ -1,8 +1,8 @@
 library(targets)
 
 tar_option_set(
-  packages = c("dplyr", "ggplot2", "ggraph", "ggrepel", "readr", "tibble", "tidygraph", "tidyr"),
-  format = "rds"
+  packages = c("dplyr", "ggplot2", "ggraph", "ggrepel", "readr", "stringr", "tibble", "tidygraph", "tidyr"),
+    format = "rds"
 )
 
 tar_source()
@@ -14,11 +14,31 @@ list(
   ),
   tar_target(
        name = population_pp,
-    command = preprocess(population)
+    command = {
+
+      replacements <- c(
+                                    "United States of America" = "USA", 
+                      "Venezuela \\(Bolivarian Republic of\\)" = "Venezuela",
+        "United Kingdom of Great Britain and Northern Ireland" = "UK",
+                            "Netherlands \\(Kingdom of the\\)" = "Netherlands"
+      )
+  
+      population |>
+	mutate(
+	  year = as.Date(paste(year, 1, 1, sep = "-"))
+	) |>
+	mutate(
+	  coo_name = str_replace_all(coo_name, replacements)
+	) |>
+	mutate(
+	  coa_name = str_replace_all(coa_name, replacements)
+	)
+
+    }
   ),
   tar_target(
        name = tidy_population,
-    command = tidy(population_pp)
+    command = population_pp |> pivot_longer(refugees:hst)
   ),
   tar_target(
        name = busiest_routes,
