@@ -1,58 +1,112 @@
-# Created by use_targets().
-# Follow the comments below to fill in this target script.
-# Then follow the manual to check and run the pipeline:
-#   https://books.ropensci.org/targets/walkthrough.html#inspect-the-pipeline # nolint
-
-# Load packages required to define the pipeline:
-library(showtext) # for font_add_google in theme_mjh
-library(ggplot2) # for %+replace% in theme_mjh
 library(targets)
-# library(tarchetypes) # Load other packages as needed. # nolint
 
-font_add_google("Gochi Hand", "gochi")
-
-# Set target options:
 tar_option_set(
-  packages = c("dplyr", "ggplot2", "ggraph", "ggrepel", "readr", "tibble", "tidygraph", "tidyr"), # packages that your targets need to run
-  format = "rds" # default storage format
-  # Set other options as needed.
+  packages = c("dplyr", "ggplot2", "ggrepel", "readr", "stringr", "tibble", "tidyr"),
+    format = "rds"
 )
-
-# tar_make_clustermq() configuration (okay to leave alone):
-options(clustermq.scheduler = "multicore")
-
-# tar_make_future() configuration (okay to leave alone):
-# Install packages {{future}}, {{future.callr}}, and {{future.batchtools}} to allow use_targets() to configure tar_make_future() options.
-
-# Run the R scripts in the R/ folder with your custom functions:
-tar_source()
-# source("other_functions.R") # Source other scripts as needed. # nolint
-
-ggplot2::theme_set(theme_mjh(base_size = 15))
-
-## Automatically use showtext to render text
-showtext_auto()
 
 list(
   tar_target(
-    name = population,
+       name = population,
     command = read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv')
   ),
   tar_target(
-    name = population_pp,
-    command = preprocess(population)
+       name = population_pp,
+    command = {
+
+      replacements <- c(
+                                    "United States of America" = "USA", 
+                      "Venezuela \\(Bolivarian Republic of\\)" = "Venezuela",
+        "United Kingdom of Great Britain and Northern Ireland" = "UK",
+                            "Netherlands \\(Kingdom of the\\)" = "Netherlands"
+      )
+  
+      population |>
+	mutate(
+	  year = as.Date(paste(year, 1, 1, sep = "-"))
+	) |>
+	mutate(
+	  coo_name = str_replace_all(coo_name, replacements)
+	) |>
+	mutate(
+	  coa_name = str_replace_all(coa_name, replacements)
+	)
+
+    }
   ),
   tar_target(
-    name = tidy_population,
-    command = tidy(population_pp)
+       name = tidy_population,
+    command = population_pp |> pivot_longer(refugees:hst)
   ),
   tar_target(
-    name = busiest_routes,
-    command = busiest_routes_plot(tidy_population)
+       name = busiest_routes_plot,
+    command = {
+
+      X_asylum <- tidy_population |>
+	filter(name == "asylum_seekers") |>
+	filter(coo_name != "Unknown") |>
+	mutate(route = paste0(coo_name, "-", coa_name))
+      
+      routes <- X_asylum |>
+	group_by(route) |>
+	summarise(value = last(value)) |>
+	arrange(desc(value))
+      
+      n_labels <- 5
+      
+      busiest_routes <- routes |>
+	head(n_labels)
+      
+      other_routes <- routes |>
+	slice((n_labels + 1):50)
+      
+      X_busiest_routes <- X_asylum |>
+	filter(route %in% busiest_routes$route)
+      
+      X_other_routes <- X_asylum |>
+	filter(route %in% other_routes$route)
+      
+      plot_short_description <- "Busiest routes for asylum seekers"
+      plot_methodology_note <- "Numbers of asylum seekers with known country of origin and application"
+      data_credit <- "United Nations High Commissioner for Refugees (UNHCR) Refugee Data Finder"
+      plot_credit <- "Matthew Henderson"
+      
+      ggplot() +
+	geom_line(data = X_busiest_routes, mapping = aes(x = year, y = value, colour = route)) +
+	geom_line(data = X_other_routes, mapping = aes(x = year, y = value, group = route), linewidth = 0.1, alpha = 0.5) +
+	theme_minimal() +
+	theme(legend.position = "none") +
+	geom_text_repel(
+	       mapping = aes(x = year, y = value, label = route, colour = route),
+	          data = function(x) X_busiest_routes |> filter(year == "2022-01-01"),
+	          size = 5,
+	     direction = "x",
+	         hjust = 0,
+	  segment.size = 0,
+	   box.padding = 0,
+	          xlim = c(as.Date("2022-03-01"), as.Date("2025-01-01"))
+	) +
+	scale_x_date(
+	  expand = c(0, 0),
+	  limits = c(as.Date("2010-01-01"), as.Date("2025-01-01"))
+	) +
+	labs(
+	     title = plot_short_description,
+	  subtitle = plot_methodology_note,
+	   caption = paste("Data:", data_credit, "\nPlot:", plot_credit)
+	)
+    }
   ),
   tar_target(
-    name = save_busiest_routes_plot,
-    command = ggsave(plot = busiest_routes, filename = "plot/busiest-routes-plot.png", bg = "white", width = 5, height = 4),
-    format = "file"
+       format = "file",
+       name = save_busiest_routes_plot,
+    command = ggsave(
+          plot = busiest_routes_plot,
+      filename = "plot/busiest-routes-plot.png",
+            bg = "white",
+         width = 4000,
+        height = 3000,
+	 units = "px"
+    )
   )
 )
